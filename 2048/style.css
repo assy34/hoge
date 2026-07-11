@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  background: #16161f;
+  overflow-x: hidden;
+  touch-action: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+  color: #eee;
+  padding: 16px;
+}
+
+#game-container {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 900;
+  color: #edc22e;
+  text-shadow: 0 0 10px rgba(237, 194, 46, 0.5);
+}
+
+.hud-boxes {
+  display: flex;
+  gap: 8px;
+}
+
+.hud-box {
+  background: #2c2c3a;
+  border-radius: 6px;
+  padding: 6px 14px;
+  text-align: center;
+  min-width: 70px;
+}
+
+.hud-label {
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.hud-value {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.hint {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: #2c2c3a;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(10, 10, 15, 0.9);
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #edc22e;
+  text-shadow: 0 0 14px #edc22e, 0 0 30px #9c7a00;
+}
+
+.overlay p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #ddd;
+  max-width: 320px;
+}
+
+.overlay button {
+  margin-top: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #201800;
+  background: linear-gradient(180deg, #f2d377, #edc22e);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(237, 194, 46, 0.5);
+  letter-spacing: 1px;
+}
+
+.overlay button:active {
+  transform: scale(0.96);
+}
+
+.back-link {
+  margin-top: 14px;
+  font-size: 12px;
+}
+
+.back-link a {
+  color: #9cf;
+}

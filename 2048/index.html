@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>2048</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="hud">
+      <h1 class="logo">2048</h1>
+      <div class="hud-boxes">
+        <div class="hud-box">
+          <div class="hud-label">SCORE</div>
+          <div class="hud-value" id="score">0</div>
+        </div>
+        <div class="hud-box">
+          <div class="hud-label">BEST</div>
+          <div class="hud-value" id="best">0</div>
+        </div>
+      </div>
+    </div>
+    <p class="hint">← → ↑ ↓ / スワイプでタイルを動かし、同じ数字を合体させよう</p>
+
+    <canvas id="game-canvas" width="440" height="440"></canvas>
+
+    <div id="start-screen" class="overlay">
+      <h1>2048</h1>
+      <p>タイルをスライドさせて同じ数字を合体させ、<br>「2048」を目指すパズルゲーム。</p>
+      <button id="start-btn">スタート</button>
+    </div>
+
+    <div id="win-screen" class="overlay hidden">
+      <h1>2048達成!</h1>
+      <p>おめでとうございます。このまま続けて高スコアを狙えます。</p>
+      <button id="continue-btn">続ける</button>
+    </div>
+
+    <div id="game-over-screen" class="overlay hidden">
+      <h1>GAME OVER</h1>
+      <p>SCORE: <span id="final-score">0</span></p>
+      <button id="restart-btn">もう一度プレイ</button>
+    </div>
+
+    <p class="back-link"><a href="../index.html">&larr; ゲーム選択に戻る</a></p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
