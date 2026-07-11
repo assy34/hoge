@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>ブロックフォール</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div class="play-area">
+      <canvas id="game-canvas" width="280" height="560"></canvas>
+
+      <div id="side-panel">
+        <div class="panel-box">
+          <div class="panel-label">NEXT</div>
+          <canvas id="next-canvas" width="96" height="96"></canvas>
+        </div>
+        <div class="panel-box">
+          <div class="panel-label">SCORE</div>
+          <div class="panel-value" id="score">0</div>
+        </div>
+        <div class="panel-box">
+          <div class="panel-label">LEVEL</div>
+          <div class="panel-value" id="level">1</div>
+        </div>
+        <div class="panel-box">
+          <div class="panel-label">LINES</div>
+          <div class="panel-value" id="lines">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="start-screen" class="overlay">
+      <h1>ブロックフォール</h1>
+      <p>
+        移動: ← →&nbsp;&nbsp;|&nbsp;&nbsp;ソフトドロップ: ↓<br>
+        回転: ↑ (右回転) / Z (左回転)&nbsp;&nbsp;|&nbsp;&nbsp;ハードドロップ: スペース<br>
+        横一列を揃えて消そう。積み上がると終了。
+      </p>
+      <button id="start-btn">スタート</button>
+    </div>
+
+    <div id="game-over-screen" class="overlay hidden">
+      <h1>GAME OVER</h1>
+      <p>SCORE: <span id="final-score">0</span></p>
+      <button id="restart-btn">もう一度プレイ</button>
+    </div>
+
+    <div id="pause-screen" class="overlay hidden">
+      <h1>PAUSE</h1>
+      <button id="resume-btn">再開</button>
+    </div>
+
+    <div id="touch-controls">
+      <button id="btn-left" class="touch-btn">◀</button>
+      <button id="btn-rotate" class="touch-btn">⟳</button>
+      <button id="btn-right" class="touch-btn">▶</button>
+      <button id="btn-down" class="touch-btn">▼</button>
+      <button id="btn-drop" class="touch-btn wide">DROP</button>
+    </div>
+
+    <p class="back-link"><a href="../index.html">&larr; ゲーム選択に戻る</a></p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

@@ -68,6 +68,7 @@ body {
 
 .game-card.shooter:hover { border-color: #00e5ff; box-shadow: 0 8px 24px rgba(0, 229, 255, 0.25); }
 .game-card.smash:hover { border-color: #ff9500; box-shadow: 0 8px 24px rgba(255, 149, 0, 0.25); }
+.game-card.tetris:hover { border-color: #5cff6b; box-shadow: 0 8px 24px rgba(92, 255, 107, 0.25); }
 
 .card-icon {
   font-size: 44px;
@@ -103,4 +104,9 @@ body {
 .game-card.smash .play-btn {
   background: linear-gradient(180deg, #ffd23f, #ff9500);
   color: #200;
+}
+
+.game-card.tetris .play-btn {
+  background: linear-gradient(180deg, #5cff6b, #17a82a);
+  color: #002;
 }
