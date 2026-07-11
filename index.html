@@ -2,46 +2,30 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>スターシューター</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゲームセンター</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
-    <canvas id="game-canvas" width="480" height="640"></canvas>
+  <main class="hub">
+    <h1>ゲームセンター</h1>
+    <p class="subtitle">遊びたいゲームを選んでください</p>
 
-    <div id="hud">
-      <div class="hud-item">SCORE: <span id="score">0</span></div>
-      <div class="hud-item">LEVEL: <span id="level">1</span></div>
-      <div class="hud-item">LIVES: <span id="lives">3</span></div>
+    <div class="game-grid">
+      <a class="game-card shooter" href="shooter/index.html">
+        <div class="card-icon">🚀</div>
+        <h2>スターシューター</h2>
+        <p>縦スクロールシューティング。敵を撃ち落としてスコアを稼ごう。</p>
+        <span class="play-btn">あそぶ &rarr;</span>
+      </a>
+
+      <a class="game-card smash" href="smash/index.html">
+        <div class="card-icon">🥊</div>
+        <h2>スマッシュファイター</h2>
+        <p>1人 vs CPUの対戦アクション。相手を場外に吹き飛ばせ。</p>
+        <span class="play-btn">あそぶ &rarr;</span>
+      </a>
     </div>
-
-    <div id="start-screen" class="overlay">
-      <h1>スターシューター</h1>
-      <p>矢印キー / A・D / スワイプで移動<br>スペースキー / タップで発射</p>
-      <button id="start-btn">ゲームスタート</button>
-      <p class="game-link"><a href="smash/index.html">スマッシュファイターで遊ぶ &rarr;</a></p>
-    </div>
-
-    <div id="game-over-screen" class="overlay hidden">
-      <h1>GAME OVER</h1>
-      <p>SCORE: <span id="final-score">0</span></p>
-      <p id="high-score-msg"></p>
-      <button id="restart-btn">もう一度プレイ</button>
-    </div>
-
-    <div id="pause-screen" class="overlay hidden">
-      <h1>PAUSE</h1>
-      <button id="resume-btn">再開</button>
-    </div>
-
-    <div id="touch-controls">
-      <button id="btn-left" class="touch-btn">◀</button>
-      <button id="btn-fire" class="touch-btn">FIRE</button>
-      <button id="btn-right" class="touch-btn">▶</button>
-    </div>
-  </div>
-
-  <script src="game.js"></script>
+  </main>
 </body>
 </html>

@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+  color: #fff;
+}
+
+#game-container {
+  position: relative;
+  width: 480px;
+  height: 640px;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #0a0a2a 0%, #000000 100%);
+  border: 2px solid #2a3a6a;
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0 6px #00e5ff;
+  pointer-events: none;
+  letter-spacing: 1px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(0, 0, 10, 0.82);
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h1 {
+  font-size: 38px;
+  letter-spacing: 2px;
+  color: #00e5ff;
+  text-shadow: 0 0 14px #00e5ff, 0 0 30px #0077ff;
+}
+
+.overlay p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cdd;
+}
+
+.overlay button {
+  margin-top: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #001;
+  background: linear-gradient(180deg, #00e5ff, #0090c0);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.overlay button:active {
+  transform: scale(0.96);
+}
+
+.back-link {
+  position: absolute;
+  bottom: 6px;
+  left: 10px;
+  font-size: 12px;
+}
+
+.back-link a {
+  color: #9cf;
+}
+
+#touch-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.touch-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 229, 255, 0.7);
+  background: rgba(0, 60, 90, 0.55);
+  color: #00e5ff;
+  font-size: 18px;
+  font-weight: bold;
+  user-select: none;
+  touch-action: none;
+}
+
+#btn-fire {
+  width: 84px;
+  height: 84px;
+  background: rgba(255, 60, 60, 0.4);
+  border-color: rgba(255, 120, 120, 0.8);
+  color: #ffdddd;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #touch-controls {
+    display: flex;
+  }
+}
