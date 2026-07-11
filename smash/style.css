@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+  color: #fff;
+}
+
+#game-container {
+  position: relative;
+  width: 800px;
+  height: 480px;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #6fb7ff 0%, #bfe6ff 60%, #e8f7ff 100%);
+  border: 2px solid #223;
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.fighter-hud {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 6px 12px;
+  min-width: 120px;
+  text-align: left;
+}
+
+.fighter-hud.right {
+  text-align: right;
+}
+
+.hud-name {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.hud-percent {
+  font-size: 26px;
+  font-weight: 900;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+#hud-player .hud-percent { color: #58c4ff; }
+#hud-cpu .hud-percent { color: #ff6262; }
+
+.hud-stocks {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.fighter-hud.right .hud-stocks {
+  justify-content: flex-end;
+}
+
+.stock-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #58c4ff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+
+#hud-cpu .stock-dot { background: #ff6262; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(0, 0, 10, 0.82);
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h1 {
+  font-size: 38px;
+  letter-spacing: 2px;
+  color: #ffd23f;
+  text-shadow: 0 0 14px #ffd23f, 0 0 30px #ff7a00;
+}
+
+.overlay p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #dde;
+  max-width: 520px;
+}
+
+.overlay button {
+  margin-top: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #200;
+  background: linear-gradient(180deg, #ffd23f, #ff9500);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(255, 180, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+.overlay button:active {
+  transform: scale(0.96);
+}
+
+.back-link {
+  position: absolute;
+  bottom: 6px;
+  left: 10px;
+  font-size: 12px;
+}
+
+.back-link a {
+  color: #9cf;
+}
+
+#touch-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.touch-left, .touch-right {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.touch-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: rgba(30, 30, 40, 0.55);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+  touch-action: none;
+}
+
+.touch-btn.atk {
+  background: rgba(70, 140, 255, 0.5);
+}
+
+.touch-btn.smash {
+  background: rgba(255, 70, 70, 0.5);
+  width: 66px;
+  height: 66px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #touch-controls {
+    display: flex;
+  }
+}

@@ -98,6 +98,15 @@ body {
   transform: scale(0.96);
 }
 
+.game-link {
+  margin-top: 4px;
+}
+
+.game-link a {
+  color: #9cf;
+  font-size: 13px;
+}
+
 #touch-controls {
   position: absolute;
   bottom: 16px;

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>スマッシュファイター</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas" width="800" height="480"></canvas>
+
+    <div id="hud">
+      <div class="fighter-hud" id="hud-player">
+        <div class="hud-name">PLAYER</div>
+        <div class="hud-percent" id="p1-percent">0%</div>
+        <div class="hud-stocks" id="p1-stocks"></div>
+      </div>
+      <div class="fighter-hud right" id="hud-cpu">
+        <div class="hud-name">CPU</div>
+        <div class="hud-percent" id="p2-percent">0%</div>
+        <div class="hud-stocks" id="p2-stocks"></div>
+      </div>
+    </div>
+
+    <div id="start-screen" class="overlay">
+      <h1>スマッシュファイター</h1>
+      <p>
+        移動: ← → / A D&nbsp;&nbsp;|&nbsp;&nbsp;ジャンプ: ↑ / W / スペース (2段ジャンプ可)<br>
+        通常攻撃: Z&nbsp;&nbsp;|&nbsp;&nbsp;スマッシュ攻撃: X<br>
+        ↑または↓を押しながら攻撃で方向を変えられます<br>
+        相手を吹き飛ばして画面外(場外)に出せばストックを奪える。3ストック先に失った方が負け。
+      </p>
+      <button id="start-btn">たたかう</button>
+    </div>
+
+    <div id="game-over-screen" class="overlay hidden">
+      <h1 id="result-title">WIN!</h1>
+      <button id="restart-btn">もう一度たたかう</button>
+    </div>
+
+    <div id="pause-screen" class="overlay hidden">
+      <h1>PAUSE</h1>
+      <button id="resume-btn">再開</button>
+    </div>
+
+    <div id="touch-controls">
+      <div class="touch-left">
+        <button id="btn-left" class="touch-btn">◀</button>
+        <button id="btn-right" class="touch-btn">▶</button>
+        <button id="btn-jump" class="touch-btn">▲</button>
+      </div>
+      <div class="touch-right">
+        <button id="btn-attack" class="touch-btn atk">Z</button>
+        <button id="btn-smash" class="touch-btn smash">X</button>
+      </div>
+    </div>
+
+    <p class="back-link"><a href="../index.html">&larr; スターシューターに戻る</a></p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
